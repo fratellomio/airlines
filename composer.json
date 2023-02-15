@@ -1,0 +1,15 @@
+{
+    "name": "apzcrawl/pelitaair",
+    "authors": [
+        {
+            "name": "Khoerintus",
+            "email": "khoerintus@airpaz.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Apzcrawl\\PelitaAir\\": "src"}
+    },
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
