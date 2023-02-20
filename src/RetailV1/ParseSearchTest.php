@@ -55,6 +55,23 @@ class ParseSearch implements StageInterface
             $infantIWJR =
                 $class->ECONOMY[0]->PriceDetail[2]->FareComponent[2]->Amount;
             $taxInfant = $infantVAT + $infantIWJR;
+            // echo "<br/>";
+            // echo "flightCode: " . $flightCode;
+            // echo "<br/>";
+            // echo $city;
+            // echo "<br/>";
+            // echo $dptDateTime;
+            // echo "<br/>";
+            // echo $arrDateTime;
+            // echo "<br/>";
+            // echo $fareClass;
+            // echo "<br/>";
+            // echo "Basic fare: ";
+            // echo $priceAdult;
+            // echo "<br/>";
+            // echo "adult tax: ";
+            // echo $taxAdult;
+            // echo "<br/>";
             if (isset($flight->Segments[1])) {
                 // Transit Flight
                 throw new \Exception("Transit Flight Found");
@@ -82,7 +99,33 @@ class ParseSearch implements StageInterface
                 $flightObj->addPrice('infant', 'tax', $taxInfant, 'IDR');
             }
             $flightCollection->add($flightObj);
+            // dd($flightCode);
+            // foreach ($flight as $flightDataKey => $flightDataValue) {
+            //     // dd($flightDataValue);
+            //     print_r($flightDataKey);
+            //     echo ' = ';
+            //     print_r($flightDataValue);
+            //     echo "<br/>";
+            //     // foreach ($flight_data as $flight_data2) {
+            //     //     // print_r($flight_data2);
+            //     //     echo '<br/>';
+            //     //     foreach ($flight_data2 as $flight_data3) {
+            //     //         print_r($flight_data3);
+            //     //         echo '<br/>';
+            //     //     }
+            //     // }
+            // }
+            // echo "<br/>";
+            // echo "<hr/>";
+            // echo "<br/>";
         }
+        // echo $city;
+        // echo "<br/>";
+        // echo $departure;
+        // echo "<br/>";
+        // echo $flightCode;
+        // print_r($retval->DATA[0][0]);
+        // echo "<br/>";
         return $flightCollection;
     }
 
